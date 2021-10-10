@@ -158,7 +158,7 @@ for c in counties + cities:
     degree_assortativity_coefficient.append(nx.degree_assortativity_coefficient(Gc))
     degree_centrality_mean.append(sum([dc[k] for k in Gc]) / len(Gc))
     degree_mean.append(Gc.size() / len(Gc))
-    density.append(density(Gc))
+    density.append(nx.density(Gc))
     diameter.append(nx.diameter(Gc))
     dominating_set_proportion.append(len(nx.dominating_set(Gc)) / len(Gc))
     eccentricity_mean.append(sum([e[k] for k in Gc]) / len(Gc))
