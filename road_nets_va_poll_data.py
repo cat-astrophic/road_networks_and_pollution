@@ -16,7 +16,6 @@ pm = pd.read_csv(filepath + 'data/pollution_data/pm_data.csv')
 pm10 = pd.read_csv(filepath + 'data/pollution_data/pm10_data.csv')
 co = pd.read_csv(filepath + 'data/pollution_data/co_data.csv')
 no2 = pd.read_csv(filepath + 'data/pollution_data/no2_data.csv')
-pb = pd.read_csv(filepath + 'data/pollution_data/pb_data.csv')
 
 # Creating a list of all VA FIPS codes and municipalities
 
@@ -88,7 +87,7 @@ dates = [d for d in dates if d not in drops]
 
 # Creating pollution data for each pollutant
 
-pollutants = ['Ozone', 'PM2.5', 'PM10', 'NO2', 'CO', 'Pb']
+pollutants = ['Ozone', 'PM2.5', 'PM10', 'NO2', 'CO']
 df_dates = []
 locations = []
 fips = []
@@ -99,7 +98,7 @@ for d in dates:
     
     print(d) # Visualize progress
     
-    for p in range(6):
+    for p in range(5):
         
         for c in counties + cities:
             
@@ -124,14 +123,10 @@ for d in dates:
                 
                 tmp = no2[no2.Date == int('2020' + d)]
                 
-            elif p == 4:
+            else:
                 
                 tmp = co[co.Date == int('2020' + d)]
                 
-            else:
-                
-                tmp = pb[pb.Date == int('2020' + d)]
-            
             try:
                 
                 tmp = tmp[tmp.FIPS == fips_list[agg_list.index(c)]].reset_index(drop = True)
