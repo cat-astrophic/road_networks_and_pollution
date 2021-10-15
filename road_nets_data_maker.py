@@ -36,7 +36,6 @@ iv_la = []
 for d in dates:
     
     tmp = poll[poll.Date == d]
-    pb_tmp = tmp[tmp.Pollutant == 'Pb']
     co_tmp = tmp[tmp.Pollutant == 'CO']
     no2_tmp = tmp[tmp.Pollutant == 'NO2']
     o3_tmp = tmp[tmp.Pollutant == 'CO']
