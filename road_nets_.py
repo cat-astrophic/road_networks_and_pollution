@@ -167,7 +167,7 @@ for c in counties + cities:
     effective_size_mean.append(sum([es[k] for k in Gc]) / len(Gc))
     harmonic_centrality_mean.append(sum([hc[k] for k in Gc]) / len(Gc))
     in_degree_centrality_mean.append(sum([idc[k] for k in Gc]) / len(Gc))
-    load_centrality_mean.append(sum([lc[k] for k in Gc]) / len(Gc))    
+    load_centrality_mean.append(sum([lc[k] for k in Gc]) / len(Gc))
     order.append(len(G))
     order_sc.append(len(Gc))
     order_sc_ratio.append(len(Gc) / len(G))
@@ -266,11 +266,11 @@ df = pd.concat([df, closeness_centrality_mean, degree_assortativity_coefficient,
                 streets_per_node_mean, intersections, street_length_total,
                 street_segment_count, street_length_mean, circuity, self_loop_proportion,
                 node_density_km, intersection_density_km, edge_density_km, street_density_km,
-                pct_4way_intersections, pct_3way_intersections, pct_2way_intersections], axis = 0)
+                pct_4way_intersections, pct_3way_intersections, pct_2way_intersections], axis = 1)
 
 df.columns = col_names
 
 # Write network statistics to file
 
-df.to_csv(direc + 'road_network_statistics.csv')
+df.to_csv(direc + 'data/road_network_statistics.csv')
 
