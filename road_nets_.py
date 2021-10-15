@@ -268,7 +268,19 @@ df = pd.concat([df, closeness_centrality_mean, degree_assortativity_coefficient,
                 node_density_km, intersection_density_km, edge_density_km, street_density_km,
                 pct_4way_intersections, pct_3way_intersections, pct_2way_intersections], axis = 1)
 
-df.columns = col_names
+df.index = col_names
+df.columns = ['Locations', 'closeness_centrality_mean', 'degree_assortativity_coefficient',
+              'degree_centrality_mean', 'degree_mean', 'density', 'diameter',
+              'dominating_set_proportion', 'eccentricity_mean', 'edge_betweenness_centrality_mean',
+              'edge_load_centrality_mean', 'effective_size_mean', 'harmonic_centrality_mean',
+              'in_degree_centrality_mean', 'load_centrality_mean', 'order', 'order_sc',
+              'order_sc_ratio', 'out_degree_centrality_mean', 'pagerank_mean',
+              'percolation_centrality_mean', 'radius', 'reciprocity', 'shortest_path_mean',
+              'size', 'size_sc', 'size_sc_ratio', 'wiener_index', 'edge_length_total',
+              'edge_length_mean', 'streets_per_node_mean', 'intersections', 'street_length_total',
+              'street_segment_count', 'street_length_mean', 'circuity', 'self_loop_proportion',
+              'node_density_km', 'intersection_density_km', 'edge_density_km', 'street_density_km',
+              'pct_4way_intersections', 'pct_3way_intersections', 'pct_2way_intersections']
 
 # Write network statistics to file
 
