@@ -8,7 +8,7 @@ This repo is for a project studying the impact of road network structure on air 
 4. road_nets_.py *(this script uses OSMnx to collect road network data from OSM, create network statistics, and create figures)*
 5. road_nets_data_maker.py *(this script creates the final data set)*
 
-###Installing OSMnx:
+### Installing OSMnx:
 
 This project uses OSMnx to access the OSM API and retrieve road network data. To install OSMnx:
 1. Install Anaconda
