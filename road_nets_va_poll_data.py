@@ -103,7 +103,7 @@ for d in dates:
                 
                 tmp = tmp[tmp.FIPS == fips_list[munic_list.index(c)]].reset_index(drop = True)
                 vp = tmp.Value[0]
-                vals.append(vp)
+                vals.append(max(0,vp)) # This data is zero censured to address negative values arising from measurement error
                 
             except:
                 
