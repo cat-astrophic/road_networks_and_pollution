@@ -69,6 +69,30 @@ iv_la = pd.Series(iv_la, name = 'IV_Lanes_Affected')
 
 main_df = pd.concat([time, fn, pm, pm10, o3, no2, co, iv_bin, iv_count, iv_la], axis = 1)
 
+# Adding municipal mean instruments
+
+a = []
+b = []
+c = []
+locs = list(main_df.Locations.unique())
+
+for loc in locs:
+    
+    tmp = main_df[main_df.Locations == loc]
+    a.append(tmp.IV_Binary.sum())
+    b.append(tmp.IV_Count.sum())
+    c.append(tmp.IV_Lanes_Affected.sum())
+
+iv_bin_mean = [a[locs.index(loc)] for loc in main_df.Locations]
+iv_count_mean = [b[locs.index(loc)] for loc in main_df.Locations]
+iv_la_mean = [c[locs.index(loc)] for loc in main_df.Locations]
+
+iv_bin_mean = pd.Series(iv_bin_mean, name = 'IV1')
+iv_count_mean = pd.Series(iv_count_mean, name = 'IV2')
+iv_la_mean = pd.Series(iv_la_mean, name = 'IV3')
+
+main_df = pd.concat([main_df, iv_bin_mean, iv_count_mean, iv_la_mean], axis = 1)
+
 # Saving main df to file
 
 main_df.to_csv(filepath + 'complete_data.csv', index = False)
