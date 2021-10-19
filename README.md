@@ -28,11 +28,13 @@ This project uses OSMnx to access the OSM API and retrieve road network data. To
 2. Open the Anaconda prompt
 3. Run the following code:
 ```
-conda create --name geo # this creates a new environment called geo
-conda acticate geo # this activates the new environment
-conda install -c conda-forge fiona shapely rasterio pyproj pandas jupyterlab geopandas osmnx # this installs what is needed for OSMnx inside geo
-jupyter lab # now that everything is installed in geo, run jupyter lab and start working!
+conda create --name geo
+conda acticate geo
+conda install -c conda-forge fiona shapely rasterio pyproj pandas jupyterlab geopandas osmnx
+jupyter lab
 ```
+
+Following theses steps (1) creates a new environment call geo; (2) activates the new environment; (3) installs what is needed for OSMnx inside geo; (4) runs jupyter lab where you can begin to use OSMnx
 
 ### Summary Statistics Table
 
