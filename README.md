@@ -38,13 +38,23 @@ This project uses OSMnx to access the OSM API and retrieve road network data. To
 
 ### Road Networks Weighted by Edge Betweennness Centrality
 
+Fairfax County, VA
 ![](images/Fairfax_County__edge_centrality.png)
-![](images/Henrico__edge_centrality.png)
+Henrico County, VA
+![](images/Henrico_County__edge_centrality.png)
+Hopewell, VA
 ![](images/Hopewell__edge_centrality.png)
+Richmond, VA
 ![](images/Richmond__edge_centrality.png)
+Arlington, VA
 ![](images/Arlington__edge_centrality.png)
+Alexandria, VA
 ![](images/Alexandria__edge_centrality.png)
+Salem, VA
 ![](images/Salem__edge_centrality.png)
+Norfolk, VA
 ![](images/Norfolk__edge_centrality.png)
+Roanoke, VA
 ![](images/Roanoke__edge_centrality.png)
+Virginia Beach, VA
 ![](images/Virginia_Beach__edge_centrality.png)
