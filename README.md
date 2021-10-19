@@ -54,9 +54,9 @@ Richmond, VA
 
 ![](images/Richmond__edge_centrality.png)
 
-Arlington, VA
+Arlington County, VA
 
-![](images/Arlington__edge_centrality.png)
+![](images/Arlington_County__edge_centrality.png)
 
 Alexandria, VA
 
