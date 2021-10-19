@@ -35,3 +35,16 @@ This project uses OSMnx to access the OSM API and retrieve road network data. To
 ### Summary Statistics Table
 
 ![](images/summary_table.JPG)
+
+### Road Networks Weighted by Edge Betweennness Centrality
+
+![](images/Fairfax_County__edge_centrality.png)
+![](images/Henrico__edge_centrality.png)
+![](images/Hopewell__edge_centrality.png)
+![](images/Richmond__edge_centrality.png)
+![](images/Arlington__edge_centrality.png)
+![](images/Alexandria__edge_centrality.png)
+![](images/Salem__edge_centrality.png)
+![](images/Norfolk__edge_centrality.png)
+![](images/Roanoke__edge_centrality.png)
+![](images/Virginia_Beach__edge_centrality.png)
