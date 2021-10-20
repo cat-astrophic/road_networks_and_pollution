@@ -34,7 +34,7 @@ conda install -c conda-forge fiona shapely rasterio pyproj pandas jupyterlab geo
 jupyter lab
 ```
 
-Following theses steps (1) creates a new environment call geo; (2) activates the new environment; (3) installs what is needed for OSMnx inside geo; (4) runs jupyter lab where you can begin to use OSMnx
+Following theses steps (1) creates a new environment called geo; (2) activates the new environment; (3) installs what is needed for OSMnx inside geo; (4) runs jupyter lab where you can begin to use OSMnx
 
 ### Summary Statistics Table
 
