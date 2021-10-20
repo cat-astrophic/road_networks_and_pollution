@@ -20,7 +20,7 @@ Inside the compressed data folder, the following data files can be found:
 * road_network_statistics.csv *(various road network statistics)*
 * complete_data.csv *(the final data file for regression)*
 
-### Installing OSMnx:
+### Installing OSMnx
 
 This project uses OSMnx to access the OSM API and retrieve road network data. To install OSMnx:
 
