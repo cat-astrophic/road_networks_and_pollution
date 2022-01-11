@@ -29,7 +29,7 @@ This project uses OSMnx to access the OSM API and retrieve road network data. To
 3. Run the following code:
 ```
 conda create --name geo
-conda acticate geo
+conda activate geo
 conda install -c conda-forge fiona shapely rasterio pyproj pandas jupyterlab geopandas osmnx
 jupyter lab
 ```
