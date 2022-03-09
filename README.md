@@ -7,9 +7,10 @@ This repo is for a project studying the impact of road network structure on air 
 1. vdot_road_closures_scraper.py *(this script scrapes raw data on road closures from VDOT ~ 90 GB)*
 2. road_nets_IV.py *(this script creates the actual IVs)*
 3. road_nets_va_poll_data.py *(this script creates Virginia pollution data)*
-4. road_nets_.py *(this script uses OSMnx to collect road network data from OSM, create network statistics, and create figures)*
-5. road_nets_data_maker.py *(this script creates the final data set)*
-6. road_networks_pollution_regs.R *(this script runs the other R scripts which, in turn, run the different econometric specifications)*
+4. road_nets_noaa_data.py *(this creates Virginia weather data)*
+5. road_nets_.py *(this script uses OSMnx to collect road network data from OSM, create network statistics, and create figures)*
+6. road_nets_data_maker.py *(this script creates the final data set)*
+7. road_networks_pollution_regs.R *(this script runs the other R scripts which, in turn, run the different econometric specifications)*
 
 ### The Data
 
@@ -17,6 +18,7 @@ Inside the compressed data folder, the following data files can be found:
 
 * iv.csv *(the instruments data)*
 * va_pollution_data.csv *(pollution data for Virginia)*
+* va_weather_data.csv *(weather data for Virginia)*
 * road_network_statistics.csv *(various road network statistics)*
 * complete_data.csv *(the final data file for regression)*
 
