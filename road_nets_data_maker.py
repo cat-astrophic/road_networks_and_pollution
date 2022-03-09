@@ -14,6 +14,7 @@ filepath = 'C:/Users/' + username + '/Documents/Data/road_networks/data/'
 iv = pd.read_csv(filepath + 'iv.csv')
 rn = pd.read_csv(filepath + 'road_network_statistics.csv')
 poll = pd.read_csv(filepath + 'va_pollution_data.csv')
+weather = pd.read_csv(filepath + 'va_weather_data.csv')
 
 # Creating the main df
 
@@ -26,6 +27,12 @@ no2 = []
 o3 = []
 pm = []
 pm10 = []
+temp = []
+tmax = []
+tmin = []
+wet = []
+wind = []
+dewp = []
 
 fn = pd.DataFrame()
 
@@ -34,6 +41,8 @@ iv_count = []
 iv_la = []
 
 for d in dates:
+    
+    print(d) # Visualize progress
     
     tmp = poll[poll.Date == d]
     co_tmp = tmp[tmp.Pollutant == 'CO']
@@ -49,6 +58,21 @@ for d in dates:
     pm = pm + pm_tmp.Value.to_list()
     pm10 = pm10 + pm10_tmp.Value.to_list()
     
+    wmp = weather[weather.Date == d]
+    temp_tmp = wmp[wmp.Weather == 'TEMP']
+    tmax_tmp = wmp[wmp.Weather == 'MAX']
+    tmin_tmp = wmp[wmp.Weather == 'MIN']
+    wet_tmp = wmp[wmp.Weather == 'PRCP']
+    wind_tmp = wmp[wmp.Weather == 'WDSP']
+    dewp_tmp = wmp[wmp.Weather == 'DEWP']
+    
+    temp = temp + temp_tmp.Value.to_list()
+    tmax = tmax + tmax_tmp.Value.to_list()
+    tmin = tmin + tmin_tmp.Value.to_list()
+    wet = wet + wet_tmp.Value.to_list()
+    wind = wind + wind_tmp.Value.to_list()
+    dewp = dewp + dewp_tmp.Value.to_list()
+    
     fn = pd.concat([fn,rn], axis = 0).reset_index(drop = True)
     
     pirate_noise = list(iv.iloc[dates.index(d)])
@@ -63,11 +87,18 @@ pm10 = pd.Series(pm10, name = 'PM10')
 o3 = pd.Series(o3, name = 'O3')
 no2 = pd.Series(no2, name = 'NO2')
 co = pd.Series(co, name = 'CO')
+temp =  pd.Series(temp, name = 'TEMP')
+tmax =  pd.Series(tmax, name = 'MAX')
+tmin =  pd.Series(tmin, name = 'MIN')
+wet =  pd.Series(wet, name = 'PRCP')
+wind =  pd.Series(wind, name = 'WDSP')
+dewp =  pd.Series(dewp, name = 'DEWP')
 iv_bin = pd.Series(iv_bin, name = 'IV_Binary')
 iv_count = pd.Series(iv_count, name = 'IV_Count')
 iv_la = pd.Series(iv_la, name = 'IV_Lanes_Affected')
 
-main_df = pd.concat([time, fn, pm, pm10, o3, no2, co, iv_bin, iv_count, iv_la], axis = 1)
+main_df = pd.concat([time, fn, pm, pm10, o3, no2, co, temp, tmax, tmin, wet,
+                     wind, dewp, iv_bin, iv_count, iv_la], axis = 1)
 
 # Adding municipal mean instruments
 
