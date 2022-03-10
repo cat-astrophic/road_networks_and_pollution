@@ -11,8 +11,8 @@ from bs4 import BeautifulSoup as bs
 username = '' # Local username
 filepath = 'C:/Users/' + username + '/Documents/Data/ultrapollution/raw_data/' # Where data will be stored -- update as needed
 #filepath = 'F:/raw_data/'
-email = 'macary@mix.wvu.edu' # Username for EPA AQS API
-key = 'cobaltcrane25' # User key
+email = '' # Username for EPA AQS API
+key = '' # User key
 params = ['88101', '42602', '44201', '81102', '42401', '42101', '14129'] # Desired pollutants
 param_names = ['PM2.5', 'NO2', 'O3', 'PM10', 'SO2', 'CO', 'Pb'] # Names for these pollutants
 months = [str(i) if i>9 else '0'+str(i) for i in range(1,13)] # Months
