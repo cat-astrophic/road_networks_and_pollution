@@ -47,7 +47,7 @@ for d in dates:
     tmp = poll[poll.Date == d]
     co_tmp = tmp[tmp.Pollutant == 'CO']
     no2_tmp = tmp[tmp.Pollutant == 'NO2']
-    o3_tmp = tmp[tmp.Pollutant == 'O3']
+    o3_tmp = tmp[tmp.Pollutant == 'Ozone']
     pm_tmp = tmp[tmp.Pollutant == 'PM2.5']
     pm10_tmp = tmp[tmp.Pollutant == 'PM10']
     
