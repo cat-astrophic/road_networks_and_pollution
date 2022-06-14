@@ -73,7 +73,7 @@ for c in locations:
     
     # Additional street network / municipality data
     
-    gdf = ox.geocode_to_gdf(c + ', Virginia, USA')
+    gdf = ox.geocode_to_gdf(c + ', USA')
     area = ox.project_gdf(gdf).unary_union.area
     
     # Built-in OSMnx stats
