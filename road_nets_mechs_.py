@@ -18,8 +18,7 @@ figs_direc = direc + 'figures2/'
 
 locations = ['Atlanta, Georgia', 'Austin, Texas', 'Baltimore, Maryland', 
              'Birmingham, Alabama', 'Boston, Massachusetts', 'Buffalo, New York', 
-             'Charlotte, North Carolina', 'Chicago, Illinois', 'Cincinnati, Ohio', 
-#            'Cleveland, Ohio', 'Columbus, Ohio', 'Dallas, Texas', 'Denver, Colorado', 
+             'Charlotte, North Carolina', 'Chicago, Illinois', 'Cincinnati, Ohio',
              'Columbus, Ohio', 'Dallas, Texas', 'Denver, Colorado', 
              'Detroit, Michigan', 'Grand Rapids, Michigan', 'Hartford, Connecticut', 
              'Houston, Texas', 'Indianapolis, Indiana', 'Jacksonville, Florida', 
@@ -39,7 +38,7 @@ locations = ['Atlanta, Georgia', 'Austin, Texas', 'Baltimore, Maryland',
 
 df = pd.DataFrame()
 
-# Declaring some lists for data containment (26 existing measures plus a novel one for road networks!)
+# Declaring some lists for data containment
 
 col_names = []
 edge_betweenness_centrality_mean = []
