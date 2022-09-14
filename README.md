@@ -12,6 +12,7 @@ This repo is for a project studying the impact of road network structure on air 
 6. road_nets_data_maker.py *(this script creates the final data set)*
 7. road_networks_pollution_regs.R *(this script runs the other R scripts which, in turn, run the different econometric specifications)*
 8. road_nets_mechs_.py *(this script replicates parts of road_nets_.py for the municipalities in the mechanisms regressions)*
+9. road_networks_and_pollution_regs.R *(this script runs the individual scripts for each section of results in the paper)*
 
 ### The Data
 
