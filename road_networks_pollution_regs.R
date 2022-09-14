@@ -8,6 +8,5 @@ diRectoRy <- paste('C:/Users/', username, '/Documents/', sep = '')
 # Running the R scripts
 
 source(paste(diRectoRy, 'road_networks_pollution_regs_ht.R', sep = ''))
-source(paste(diRectoRy, 'road_networks_pollution_regs_diff.R', sep = ''))
-source(paste(diRectoRy, 'road_networks_pollution_regs_iv.R', sep = ''))
+source(paste(diRectoRy, 'road_networks_pollution_mechanisms.R', sep = ''))
 
