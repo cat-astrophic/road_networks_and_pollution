@@ -38,9 +38,9 @@ c3x <- coeftest(c3, vcov = vcovCL, cluster = ~Capital)
 
 stargazer(c1x,c2x,c3x, type = 'text')
 
-t1 <- ivreg(log(Time) ~ Edge.Betweenness.Centrality + Capital + log(Trips) + log(Population) | . - Edge.Betweenness.Centrality + Density.sqmi + log(Time), data = mc)
-t2 <- ivreg(log(Time) ~ Load.Centrality + Capital + log(Trips) + log(Population) | . - Load.Centrality + Density.sqmi + log(Time), data = mc)
-t3 <- ivreg(log(Time) ~ Circuity + Capital + log(Trips) + log(Population) | . - Circuity + Density.sqmi + log(Time), data = mc)
+t1 <- ivreg(log(Time) ~ Edge.Betweenness.Centrality + Capital + log(Trips) + log(Population) | . - Edge.Betweenness.Centrality + Density.sqmi + Congestion + Congestion2, data = mc)
+t2 <- ivreg(log(Time) ~ Load.Centrality + Capital + log(Trips) + log(Population) | . - Load.Centrality + Density.sqmi + Congestion + Congestion2, data = mc)
+t3 <- ivreg(log(Time) ~ Circuity + Capital + log(Trips) + log(Population) | . - Circuity + Density.sqmi + Congestion + Congestion2, data = mc)
 
 t1x <- coeftest(t1, vcov = vcovCL, cluster = ~Capital)
 t2x <- coeftest(t2, vcov = vcovCL, cluster = ~Capital)
