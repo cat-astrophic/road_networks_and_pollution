@@ -162,9 +162,9 @@ keepers <- c('PM2.5', 'edge_betweenness_centrality_mean', 'load_centrality_mean'
 
 sumdata <- regdata[,names(regdata) %in% keepers]
 
-new_names <- c('Edge Betweenness Centrality (Mean)', 'Load Centrality (Mean)',
-               'Circuity', 'Percent 3-way Intersections',  'Particulate Matter (PM2.5)',
-               'Temperature', 'Precipitaton', 'Wind Speed', 'Density')
+new_names <- c('Mean Edge Betweenness Centrality', 'Mean Load Centrality',
+               'Circuity', 'Percent 3-way Intersections',  'Particulate Matter (PM2.5) (ug/m^3)',
+               'Temperature (°F)', 'Precipitaton (inches)', 'Wind Speed (mph)', 'Density (people per sq. mi.)')
 
 names(sumdata) <- new_names
 datasummary_skim(sumdata, fmt = '%.3f')
