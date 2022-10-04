@@ -55,7 +55,7 @@ keepers <- c('Edge.Betweenness.Centrality', 'Load.Centrality', 'Circuity',
              'Congestion2', 'Time', 'LnPopulation', 'Density.sqmi', 'Capital', 'Trips')
 sd <- mc[,names(mc) %in% keepers]
 new_names <- c('Mean Edge Betweenness Centrality', 'Mean Load Centrality', 'Circuity',
-               'Congestion', 'Mean Commute Time', 'Density', 'Capital', 'Trips', 'Ln(Populaton)')
+               'Congestion', 'Mean Commute Time (minutes)', 'Density (people per sq. mi.)', 'Capital', 'Trips (per capita)', 'Ln(Populaton)')
 
 names(sd) <- new_names
 datasummary_skim(sd, fmt = '%.3f')
