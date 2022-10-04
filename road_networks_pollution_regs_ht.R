@@ -157,29 +157,14 @@ stargazer(ebcm_mod_pmd, lcm_mod_pmd, spm_mod_pmd, circuity_mod_pmd, pct3_mod_pmd
 
 # Cute sum stats table example
 
-keepers <- c('closeness_centrality_mean', 'degree_assortativity_coefficient',
-             'degree_centrality_mean', 'degree_mean', 'density', 'dominating_set_proportion',
-             'eccentricity_mean', 'edge_betweenness_centrality_mean', 'effective_size_mean',
-             'harmonic_centrality_mean', 'in_degree_centrality_mean', 'load_centrality_mean',
-             'out_degree_centrality_mean', 'pagerank_mean', 'percolation_centrality_mean',
-             'reciprocity', 'shortest_path_mean', 'edge_length_mean', 'streets_per_node_mean',
-             'street_length_mean', 'circuity', 'self_loop_proportion', 'node_density_km',
-             'intersection_density_km', 'edge_density_km', 'street_density_km',
-             'pct_4way_intersections', 'pct_3way_intersections')
+keepers <- c('PM2.5', 'edge_betweenness_centrality_mean', 'load_centrality_mean', 'circuity',
+             'pct_3way_intersections', 'Density', 'TEMP', 'PRCP', 'WDSP')
 
 sumdata <- regdata[,names(regdata) %in% keepers]
-sumdata <- cbind(regdata[,names(regdata) %in% c('PM2.5', 'NO2', 'CO', 'O3')], sumdata)
 
-new_names <- c('Particulate Matter (PM2.5)', 'Nitrogen Dioxide (NO2)', 'Carbon Monoxide (CO)',
-               'Ozone (O3)', 'Closeness Centrality (Mean)', 'Degree Assortativity Coefficient',
-               'Degree Centrality (Mean)', 'Degree (Mean)', 'Density', 'Dominating Set Proportion',
-               'Eccentricity (Mean)', 'Edge Betweenness Centrality (Mean)', 'Effective Size (Mean)',
-               'Harmonic Centrality (Mean)', 'In Degree Centrality (Mean)', 'Load Centrality (Mean)',
-               'Out Degree Centrality (Mean)', 'Pagerank (Mean)', 'Percolation Centrality (Mean)',
-               'Reciprocity', 'Shortest Path (Mean)', 'Edge Length (Mean)', 'Streets per Node (Mean)',
-               'Street Length (Mean)', 'Circuity', 'Self Loop Proportion', 'Node Density per km',
-               'Intersection Density per km', 'Edge Density per km', 'Street Density per km',
-               'Percent 4-way Intersections', 'Percent 3-way Intersections')
+new_names <- c('Edge Betweenness Centrality (Mean)', 'Load Centrality (Mean)',
+               'Circuity', 'Percent 3-way Intersections',  'Particulate Matter (PM2.5)',
+               'Temperature', 'Precipitaton', 'Wind Speed', 'Density')
 
 names(sumdata) <- new_names
 datasummary_skim(sumdata, fmt = '%.3f')
