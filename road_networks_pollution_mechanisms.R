@@ -67,25 +67,27 @@ mc$Rugged_Road <- rug.road
 
 # Running regressions
 
-c1 <- ivreg(Congestion2 ~ Edge.Betweenness.Centrality + Capital + log(Trips) + log(Population) | . - Edge.Betweenness.Centrality + Rugged_Area + log(Time), data = mc)
-c2 <- ivreg(Congestion2 ~ Load.Centrality + Capital + log(Trips) + log(Population) | . - Load.Centrality + Rugged_Area + log(Time), data = mc)
-c3 <- ivreg(Congestion2 ~ Circuity + Capital + log(Trips) + log(Population) | . - Circuity + Rugged_Area + log(Time), data = mc)
+c1 <- ivreg(Congestion2 ~ Edge.Betweenness.Centrality + Capital + log(Trips) + log(Population) | . - Edge.Betweenness.Centrality + Rugged_Area + Density.sqmi + log(Time), data = mc)
+c2 <- ivreg(Congestion2 ~ Load.Centrality + Capital + log(Trips) + log(Population) | . - Load.Centrality + Rugged_Area + Density.sqmi + log(Time), data = mc)
+c3 <- ivreg(Congestion2 ~ Circuity + Capital + log(Trips) + log(Population) | . - Circuity + Rugged_Area + Density.sqmi + log(Time), data = mc)
 
 c1x <- coeftest(c1, vcov = vcovCL, cluster = ~Capital)
 c2x <- coeftest(c2, vcov = vcovCL, cluster = ~Capital)
 c3x <- coeftest(c3, vcov = vcovCL, cluster = ~Capital)
 
-stargazer(c1x,c2x,c3x, type = 'text')
+stargazer(c1x, c2x, c3x, type = 'text')
 
-t1 <- ivreg(log(Time) ~ Edge.Betweenness.Centrality + Capital + log(Trips) + log(Population) | . - Edge.Betweenness.Centrality + Rugged_Area + Congestion + Congestion2, data = mc)
-t2 <- ivreg(log(Time) ~ Load.Centrality + Capital + log(Trips) + log(Population) | . - Load.Centrality + Rugged_Area + Congestion + Congestion2, data = mc)
-t3 <- ivreg(log(Time) ~ Circuity + Capital + log(Trips) + log(Population) | . - Circuity + Rugged_Area + Congestion + Congestion2, data = mc)
+t1 <- ivreg(log(Time) ~ Edge.Betweenness.Centrality + Capital + log(Trips) + log(Population) | . - Edge.Betweenness.Centrality + Rugged_Area + Congestion + Congestion2 + Density.sqmi, data = mc)
+t2 <- ivreg(log(Time) ~ Load.Centrality + Capital + log(Trips) + log(Population)  | . - Load.Centrality + Rugged_Area + Congestion + Congestion2 + Density.sqmi, data = mc)
+t3 <- ivreg(log(Time) ~ Circuity + Capital + log(Trips) + log(Population)  | . - Circuity + Rugged_Area + Congestion + Congestion2 + Density.sqmi, data = mc)
 
 t1x <- coeftest(t1, vcov = vcovCL, cluster = ~Capital)
 t2x <- coeftest(t2, vcov = vcovCL, cluster = ~Capital)
 t3x <- coeftest(t3, vcov = vcovCL, cluster = ~Capital)
 
-stargazer(t1x,t2x,t3x, type = 'text')
+stargazer(t1x, t2x, t3x, type = 'text')
+
+stargazer(c1x, c2x, c3x, t1x, t2x, t3x, type = 'text')
 
 # Summary statistics
 
