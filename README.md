@@ -2,7 +2,7 @@
 
 ### The Code
 
-This repo is for a project studying the impact of road network structure on air pollution. This project was my job market paper and is currently under review at the *Journal of Environmental Economics and Management*.
+This repo is for a project studying the impact of road network structure on air pollution. This project was my job market paper and is currently under review at the *NOWHERE :)*.
 
 In order to recreate the data there are three steps. First, in the epa_aqs folder there are a series of files which, when run following the instructions in the epa_aqs readme file, will produce a pollution data set with observations at the county-day level. Second, go to [my NOAA weather data repo](https://github.com/cat-astrophic/NOAA) and follow the instrtuctions to create the raw weather data. Third, ensure the username + directory match the directory structure on your machine and run the following scripts:
 
